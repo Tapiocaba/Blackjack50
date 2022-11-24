@@ -1,42 +1,64 @@
 :root {
    --bg-color: #002A22;
-   --bg-nav: #D9DBF1;
+   --bg-nav: #28502E;
+   --color-dot: #fddb3a;
 }
 
 body {
     background-color: var(--bg-color);
+    font-family: 'Courier New', monospace;
 }
+
+/* navbar  */
 
 .navMenu {
     position: absolute;
-    overflow:hidden;
-    height:calc(3em + 4px);
-    padding:calc(1em + 2px);
     width:100vw;
     border:solid 1px transparent;
-    padding:1em;
+    background-color: var(--bg-nav);
+    text-align: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .navMenu a {
-    float: left;
     text-align: center;
     font-size: 20px;
     text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
+.navLeft {
+    float: left;
+}
+
+.navLeft a {
+    font-size: 30px;
+    text-align: center;
+    text-decoration: none;
+    padding-left: -20px;
+    padding-right: 5px;
 }
 
 .navRight {
-    float:right;
+    float: right;
 }
 
 .navRight a {
+    text-align: center;
+    text-decoration: none;
     padding-left: 5px;
     padding-right: 5px;
 }
 
+/* navbar dot animations */
 .navMenu .navRight .dot {
     width: 6px;
     height: 6px;
-    background: #fddb3a;
+    background: var(--color-dot);
     border-radius: 50%;
     opacity: 0;
     -webkit-transform: translateX(15px);
@@ -46,29 +68,29 @@ body {
 }
 
 .navMenu a:nth-child(1):hover ~ .dot {
-  -webkit-transform: translateX(25px);
-  transform: translateX(25px);
+  -webkit-transform: translateX(33px);
+  transform: translateX(33px);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
 .navMenu a:nth-child(2):hover ~ .dot {
-  -webkit-transform: translateX(85px);
-  transform: translateX(85px);
+  -webkit-transform: translateX(115px);
+  transform: translateX(115px);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
 .navMenu a:nth-child(3):hover ~ .dot {
-  -webkit-transform: translateX(165px);
-  transform: translateX(165px);
+  -webkit-transform: translateX(220px);
+  transform: translateX(220px);
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   opacity: 1;
 }
 
 .navMenu a:hover {
-    color: white;
+    color: var(--color-dot);
 }
