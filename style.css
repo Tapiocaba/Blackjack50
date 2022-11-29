@@ -31,6 +31,23 @@ body {
     display: inline-block;
 }
 
+.navMenuBasic {
+    position:absolute;
+    width:100vw;
+    border:solid 1px transparent;
+    background-color: var(--bg-nav);
+    text-align: left;
+    overflow: hidden;
+    padding-left: 20px;
+}
+
+.navMenuBasic a{
+    font-size: 30px;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+}
+
 .navLeft {
     float: left;
 }
@@ -51,6 +68,13 @@ body {
     text-align: center;
     text-decoration: none;
     padding-left: 5px;
+    padding-right: 5px;
+}
+
+.navRightBasic a {
+    float: right;
+    text-decoration: none;
+    padding-left: 87px;
     padding-right: 5px;
 }
 
