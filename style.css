@@ -10,6 +10,10 @@ body {
     font-family: 'Courier New', monospace;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* navbar  */
 
 .navMenu {
@@ -120,20 +124,7 @@ body {
     color: var(--color-dot);
 }
 
-/* cards */
-
-.overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 2;
-}
+/* cards for index */
 
 .big-group {
     margin: 0px;
@@ -187,10 +178,6 @@ body {
     cursor: pointer;
 }
 
-.card-group:hover .overlay {
-    display: block;
-}
-
 .card-group:hover > .card:nth-child(1) {
     transform: translate(-40%, 3%) rotate(-20deg);
 }
@@ -207,4 +194,60 @@ body {
     height: 100vh;
     width: 100vh;
     background: (0, 0, 0, 0);
+}
+
+/* learn section side navigation */
+main > nav {
+    position: sticky;
+    align-self: start;
+    top: 5rem;
+}
+
+.learnHeading, .learnSubsection, .learnPara{
+    color: white;
+}
+
+.sidenav {
+	padding-left: 0;
+	border-left: 2px solid #efefef;
+}
+
+.sidenav a {
+	text-decoration: none;
+	display: block;
+	padding: .125rem 0;
+	color: #ccc;
+	transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+.sidenav a:hover,
+.sidenav a:focus {
+	color: #666;
+}
+
+ul, ol {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+li {
+	margin-left: 1rem;
+    text-decoration: none;
+}
+
+h1 {
+	font-weight: 300;
+}
+
+/* page layout */
+main {
+	display: grid;
+	grid-template-columns: 1fr 15em;
+	max-width: 100em;
+	width: 90%;
+	margin: 0 auto;
+}
+
+.article {
+    margin-right: 30px;
 }
