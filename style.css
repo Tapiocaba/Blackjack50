@@ -2,6 +2,7 @@
    --bg-color: #002A22;
    --bg-nav: #28502E;
    --color-dot: #fddb3a;
+   --white-color: white;
 }
 
 body {
@@ -12,7 +13,7 @@ body {
 /* navbar  */
 
 .navMenu {
-    position: absolute;
+    position: sticky;
     width:100vw;
     border:solid 1px transparent;
     background-color: var(--bg-nav);
@@ -32,7 +33,7 @@ body {
 }
 
 .navMenuBasic {
-    position:absolute;
+    position:sticky;
     width:100vw;
     border:solid 1px transparent;
     background-color: var(--bg-nav);
@@ -117,4 +118,93 @@ body {
 
 .navMenu a:hover {
     color: var(--color-dot);
+}
+
+/* cards */
+
+.overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.big-group {
+    margin: 0px;
+    height: 90vh;
+    display: grid;
+    place-items: center;
+}
+
+.card-groups {
+    display: table;
+    table-layout: fixed;
+    width: 80vh;
+    height: 45vh;
+    border-collapse: separate;
+    border-spacing: 120px 0;
+}
+
+.card-groups .card-group {
+    display: table-cell;
+    padding: 20px 0;
+}
+
+.card-groups, .card-group, .card{
+    aspect-ratio: 5/7;
+    width: 30vmin;
+}
+
+.big-group .card-group .card {
+    border-radius: 1vmin;
+    position: absolute;
+    transition: transform 300ms cubic-bezier(.23,.65,.47,.97);
+}
+
+.card:nth-child(1) {
+    background-color: purple;
+    transform: translateX(-10%) rotate(-2deg);
+}
+
+.card:nth-child(2) {
+    background-color: white;
+    transform: rotate(3deg);
+}
+
+.card:nth-child(3) {
+    background-color: green;
+    transform: translateX(-3%) rotate(-3deg);
+}
+
+.card-group:hover > .card{
+    box-shadow: -2vmin 2vmin 3vmin rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.card-group:hover .overlay {
+    display: block;
+}
+
+.card-group:hover > .card:nth-child(1) {
+    transform: translate(-40%, 3%) rotate(-20deg);
+}
+
+.card-group:hover > .card:nth-child(2) {
+    transform: translate(-15%, 2%) rotate(-8deg);
+}
+
+.card-group:hover > .card:nth-child(3) {
+    transform: translate(15%, 5%) rotate(8deg);
+}
+
+.big-group .card-group .dark-bg {
+    height: 100vh;
+    width: 100vh;
+    background: (0, 0, 0, 0);
 }
