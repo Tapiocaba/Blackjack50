@@ -14,12 +14,3 @@ function redirectPlay() {
 function redirectSolver() {
     window.location.href = "solver.html";
 }
-
-// overlay display
-function overlayOn() {
-    document.getElementById("overlay").style.display = "block";
-}
-
-function overlayOff() {
-    document.getElementById("overlay").style.display = "none";
-}
