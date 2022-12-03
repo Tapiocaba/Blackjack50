@@ -11,11 +11,11 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgments">Acknowledgments</a></li>
@@ -26,7 +26,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-for-CS50?node-id=0%3A1&t=6kb7p5gngK0dd5A2-1
-For our CS50 Final Project, we built all-in-one website to teach a player Blackjack. This includes descriptions of basic and advanced strategies, a Blackjack simulator, and a best move calculator.  
+For our CS50 Final Project, we built all-in-one Blackjack website with HTML/CSS/JS. This includes descriptions of basic and advanced strategies, a Blackjack simulator, and a best move calculator.  
 
 Demonstration: [https://youtube.com](https://example.com)
 
@@ -35,37 +35,51 @@ Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-f
 <!-- GETTING STARTED -->
 ## Getting Started
 
-work in progress
-
-### Prerequisites
-
-work in progress
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repository and open file
    ```sh
-   git clone https://github.com/github_username/repo_name.git
+   git clone https://github.com/Tapiocaba/Blackjack.git
+   cd Blackjack
    ```
-3. Install NPM packages
+2. Utilize your IDE to open the website. On VSCode, we downloaded the 'open in browser' extention, but you can also do the following:
    ```sh
-   npm install
+    cd C:Users\(insert your path here)\Blackjack
+    start index.html
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-work in progress
+* Home:
+  * this is a placeholder
+  ![alt text](https://ichef.bbci.co.uk/news/976/cpsprodpb/13F00/production/_95146618_bills.jpg)
+
+  Our home page utilzes CSS animations and transform to have the card animations in place of a traditional navigaton bar.
+
+
+* Learn:
+
+  ![alt text](https://ichef.bbci.co.uk/news/976/cpsprodpb/13F00/production/_95146618_bills.jpg)
+
+  Our learn has three sections: the rules, basic strategies, and more advanced strategies, such as card counting. On the side, we implemented a sticky navbar that will direct you to the header of different article sections, and the top navigation bar has CSS animation when switching between the words.
+
+* Play Blackjack:
+
+* Blackjack Solver
+
+  Right now, our Blackjack solver is extremely simple since our other option was to implement the entire odds board. In future iterations, we hope to include those, but for now, it will simply check whether it's (cont. later)
+
+
+
+## Future Improvements
+
+This project was mostly a front-end project that we wanted to tackle, and we were able to implement most of the stylistic features. However, there are still some improvements that can be made in future iterations:
+
+* A more flushed-out solver that would create an odds chart.
+* More detailed learn pages with quiz prompts to ask for information
+* Inclusion of money and betting in the 'play' section.
+* Different play level difficulties.
 
 <!-- LICENSE -->
 ## License
