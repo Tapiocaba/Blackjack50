@@ -25,7 +25,6 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-for-CS50?node-id=0%3A1&t=6kb7p5gngK0dd5A2-1
 For our CS50 Final Project, we built all-in-one website to teach a player Blackjack. This includes descriptions of basic and advanced strategies, a Blackjack simulator, and a best move calculator.  
 
 Demonstration: [https://youtube.com](https://example.com)
