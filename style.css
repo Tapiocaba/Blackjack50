@@ -251,3 +251,13 @@ main {
 .article {
     margin-right: 30px;
 }
+
+.bullets-list {
+    color: white;
+    display: list-item;
+    list-style-type: circle;
+}
+
+.bullets {
+    padding-left: 15px;
+}

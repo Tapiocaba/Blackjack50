@@ -32,40 +32,55 @@
     <main>
         <div class="article">
             <h1> Basic Strategy</h1>
-
             <section id="intro">
-                <p class="learnPara">
-                    Although basic strategy is not enough to overcome the house edge and guarantee
-                    that a player profits from Blackjack, following the rules of basic strategy is the first step in beating blackjack.
-                </p>
-            <section id="temp1">
+                <h2 class="learnHeading"> Introduction </h2>
+                    <p class="learnPara">
+                        Although basic strategy is not enough to overcome the house edge and guarantee
+                        that a player profits from Blackjack, following the rules of basic strategy is the first step in learning how to play.
+                    </p>
+                    <p class="learnPara">
+                        At the beginning of the game, both the player and dealer is dealt 2 cards. Whether the cards dealt contain an
+                        Ace determines whether it is a Soft or Hard hand. Depending on which type of hand you have, your strategy should change.
+                        Both have different odds on winning against the dealer.
+                    </p>
+            <section id="soft">
                 <h2 class="learnHeading">Soft Totals</h2>
                 <p class="learnPara">
                     A soft total is any hand in which one of the first two cards is an ace.
-                    The ace’s value can change to a 1, but it starts as an 11.
-                    <ul>
-                        <li>Soft 20 and soft 19 stand</li>
-                        <li>Soft 18 hits against 9 through Ace, otherwise stand</li>
-                        <li>Soft 17 through soft 13 hits</li>
-                    </ul>
+                    The ace’s value can either be a 1 or an 11, depending on the situation. Typically, soft hands
+                    imply more liquity and better options for the player. When you have a soft hand, it can lead to
+                    some of the best chances to win!
+                </p>    
+                <!-- insert picture here of examples -->
+                <p class="learnPara">
+                    <b> Strategy: </b>
                 </p>
-
+                    <ul class="bullets">
+                        <li class="bullets-list"> If you have a soft 20 and 19, then <b>stand.</b></li>
+                        <li class="bullets-list"> If you have a soft 18, <b>hit.</b> If against a visible 9 through Ace, otherwise <b>stand.</b></li>
+                        <li class="bullets-list"> If you have a soft 17 - 13, then <b>hit.</b></li>
+                    </ul>
+                    <p></p>
             </section>
-            <section id="temp2">
+            <section id="hard">
                 <h2 class="learnHeading">Hard Totals</h2>
                 <p class="learnPara">
-                    <ul>
-                        <li>17 and up always stands</li>
-                        <li>Otherwise hit</li>
-                    </ul>
+                    In a hard total hand, you won't have as many options to choose what to do. Here, you should always
+                    assume that the dealer has a 10 in the hole. 
                 </p> 
+                    <ul class="bullets">
+                        <li class="bullets-list">17 and up always stands</li>
+                        <li class="bullets-list">Otherwise, you should always hit</li>
+                    </ul>
+
         </div>
 
         <!-- side nav bar -->
         <nav class="sidenav">
             <ol>    
-                <li><a href="#temp1">Soft Totals</a></li>
-                <li><a href="#temp2">Hard Totals</a></li>     
+                <li><a href="#intro">Introduction</a></li>
+                <li><a href="#soft">Soft Totals</a></li>
+                <li><a href="#hard">Hard Totals</a></li>     
             </ol>
         </nav>
 
