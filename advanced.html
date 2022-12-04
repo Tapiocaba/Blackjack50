@@ -38,34 +38,79 @@
             <section id="intro">
                 <h2 class="learnHeading">Introduction to Advanced Strategy</h2>
                 <p class="learnPara">
-                    Counting cards is a strategy a player can use to determine whether
-                    the player or the dealer has an advantage on the next hand. This
-                    gives card counters a way to overcome the house edge and win more consistently at Blackjack.
+                    Blackjack is a game of chance and probabilities -- there's no strategy that will guarentee you victory, but there
+                    are ways to give yourself the best possible chance of winning based on your hand. In order to adopt these strategies,
+                    you'll have to memorize and retain as much information as you can while playing as many games of Blackjack as possible.
+                    Eventually, it will become almost natural!
                 </p>
             </section>
             <section id="advstrat">
                 <h2 class="learnHeading">Strategy Charts</h2>
                 <p class="learnPara">
-                    placeholder
+                    As said in basic strategy and the rules, there are multiple options for what you can do. Different games will have different rules,
+                    but generally you will have the option to either hit, stand, or double down. In some games, you can also surrender. Depending on whether you
+                    have a hard or soft hand, you'll take different actions. Below, the strategy charts are basedo on the dealerhitting a soft hand 17.
+                </p>
+                <p class="learnPara">
+                    You can also utilize our built-in solver, which will tell you the best strategy based on whether you have a soft or hard hand. 
                 </p>
             </section>
+            <section id="hard">
+                <h2 class="learnHeading">Hard Hands</h2>
+                <p class="learnPara">
+                    This chart should be used when you have a "hard" hand, or when the Ace is worth 1 instead of 11. 
+                </p>
+                <img src="learn-images/hard-total.png" alt="Hard Total Chart" class="advanced-img">
+            </section>
+            <section id="soft">
+                <br>
+                <h2 class="learnHeading">Soft Hands</h2>
+                <p class="learnPara">
+                    This chart should be used when you have a "soft" hand, or when the Ace can be counted as 11. 
+                </p>
+                <img src="learn-images/soft-total.png" alt="Soft Total Chart" class="advanced-img">
+            </section>
+            <section id="pairs">
+                <br>
+                <h2 class="learnHeading">Pairs</h2>
+                <p class="learnPara">
+                    To put this information to use, the player should adjust their bets according to
+                    the true count. Specifically they should raise their bets as the true count rises
+                    since this is when the player has the advantage. In turn, they should lower
+                    their bets when the true count is negative or neutral and the house has the advantage
+                </p>
+                <img src="learn-images/pair-split.png" alt="Pair Split Chart" class="advanced-img">
+            </section>
             <section id="cardcount">
+                <br>
                 <h2 class="learnHeading">Card Counting</h2>
                 <p class="learnPara">
-                    placeholder
+                    Counting cards is a strategy a player can use to determine whether
+                    the player or the dealer has an advantage on the next hand. This
+                    gives card counters a way to overcome the house edge and win more consistently at Blackjack.
+                </p>
+                <p class="learnPara">
+                    The hi-lo counting system that we'll be discussing was introduced in 1963 by Harvey Dubner, an electrical engineer and mathmatician. By using his
+                    strategy in combination with memorization of the basic strategy above, it can greatly increase your change of
+                    winning!
+                </p>
+                <p class="learnPara">
+                    However, be careful when you card count. Although it's not illegal, many casinos will immedietly eject you if you're
+                    caught card counting, and you won't be able to redeem your chips / money from the cashier.
                 </p>
             </section>
             <section id="step1">
                 <h2 class="learnHeading">Step 1:Assign a Value to Each Card</h2>
+                <img src="learn-images/High-Low-Card.jpg" alt="Card Counting" class="advanced-img">
+                <br>
                 <p class="learnPara"> The four steps of counting cards: </p>
                 <ul class="bullets">
                     <li class="bullets-list">Assign a value of each card</li>
                     <li class="bullets-list">Keep a “running count” based on the values of the dealt card</li>
-                    <li class="bullets-list">Use this information to calculate the “true count,” or the
-                        count per deck</li>
+                    <li class="bullets-list">Use this information to calculate the “true count,” or the count per deck</li>
                     <li class="bullets-list">Adjust bets as the true count rises</li>
                 </ul>
-
+                <br>
                 <p class="learnPara"> 
                     The most common card counting system is Hi-Lo, in which the card values are as follows:
                 </p>
@@ -91,16 +136,19 @@
                     beating the house edge even when playing with multiple decks.
                 </p>
                 <p class="learnPara">
-                    The reason true count is important is because it keeps track of not only the number
+                    True count is important  because it keeps track of not only the number
                     of extra high cards, but the concentration of high cards compared to the concentration
                     of low cards. Even with the same running count, this concentration will vary based
                     on how many decks are remaining in the game.
                 </p>
+                <img src="learn-images/true-count.png" alt="True Count" class="advanced-img">
+                <br>
                 <p class="learnPara">
                     The calculation for true count is the (running count) / (decks remaining).
                 </p>
                 <p class="learnPara">
                     <b>Example:</b> If the running count is 8, and there are 4 decks remaining, the true count is 2.
+                </p>
                 <p class="learnPara">
                     <b>Example:</b> if the running count is -5 and there are 2 decks remaining, the true count is -2.
                 </p>
@@ -120,16 +168,23 @@
         <!-- side nav bar -->
         <nav class="sidenav">
             <ol>    
-                <li><a href="intro"> Introduction to Advanced Strategy</a></li>  
-                <li><a href="advstrat"> Strategy Charts</a></li>  
-                <li><a href="cardcount"> Card Counting</a></li> 
+                <li><a href="#intro"> Introduction to Advanced Strategy</a></li>  
+                <li><a href="#advstrat"> Strategy Charts</a></li>  
                 <li>
-                <ul class="side-nav-ul">
-                    <li class="side-nav-li"><a href="#step1">Step 1: Assign a Value to Each Card</a></li>
-                    <li class="side-nav-li"><a href="#step2">Step 2: Keep a "Running Count"</a></li>     
-                    <li class="side-nav-li"><a href="#step3">Step 3: Keep a "True Count"</a></li>     
-                    <li class="side-nav-li"><a href="#step4">Step 4: Change Your Bets Based on True Count</a></li>     
-                </ul>
+                    <ul class="side-nav-ul">
+                        <li class="side-nav-li"><a href="#hard"> Hard Hand </a></li>
+                        <li class="side-nav-li"><a href="#soft"> Soft Hand </a></li>
+                        <li class="side-nav-li"><a href="#pairs"> Pairs </a></li>
+                    </ul>
+                </li>
+                <li><a href="#cardcount"> Card Counting</a></li> 
+                <li>
+                    <ul class="side-nav-ul">
+                        <li class="side-nav-li"><a href="#step1">Step 1: Assign a Value to Each Card</a></li>
+                        <li class="side-nav-li"><a href="#step2">Step 2: Keep a "Running Count"</a></li>     
+                        <li class="side-nav-li"><a href="#step3">Step 3: Keep a "True Count"</a></li>     
+                        <li class="side-nav-li"><a href="#step4">Step 4: Change Your Bets Based on True Count</a></li>     
+                    </ul>
                 </li> 
             </ol>
         </nav>

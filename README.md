@@ -75,10 +75,11 @@ Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-f
 
 This project was mostly a front-end project that we wanted to tackle, and we were able to implement most of the stylistic features. However, there are still some improvements that can be made in future iterations:
 
-* A more flushed-out solver that would create an odds chart.
+* Adding split options into the solver.
 * More detailed learn pages with quiz prompts to ask for information
 * Inclusion of money and betting in the 'play' section.
 * Different play level difficulties.
+* Adding page tranistions and other front-end features to make the website more seamless.
 
 <!-- LICENSE -->
 ## License

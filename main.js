@@ -4,7 +4,7 @@ document.getElementById('playLink').addEventListener('click', redirectPlay);
 document.getElementById('solverLink').addEventListener('click', redirectSolver);
 
 function redirectLearn() {
-    window.location.href = "basics.html";
+    window.location.href = "rules.html";
 }
 
 function redirectPlay() {
