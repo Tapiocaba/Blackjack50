@@ -196,14 +196,14 @@ html {
     background: (0, 0, 0, 0);
 }
 
-/* learn section side navigation */
+/* page layout for learn*/
 main > nav {
     position: sticky;
     align-self: start;
     top: 5rem;
 }
 
-.learnHeading, .learnSubsection, .learnPara{
+.learnHeading, .learnSubsection, .learnPara {
     color: white;
 }
 
@@ -239,7 +239,6 @@ h1 {
 	font-weight: 300;
 }
 
-/* page layout */
 main {
 	display: grid;
 	grid-template-columns: 1fr 15em;
@@ -270,4 +269,46 @@ main {
 
 .side-nav-li {
     margin-left: 1rem;
+}
+
+/* Solver css*/
+
+.solver-container {
+    display: flex;
+    margin: 4vh;
+    align-items: center;
+}
+
+.solver-heading {
+    color: rgba(255, 255, 255, 1);
+    align-items: left;
+    font-size: 25px;
+}
+
+.solver-words {
+    flex: 1;
+}
+
+.solver-dropdowns {
+    flex: 2;
+}
+
+.form-label {
+    color: white;
+}
+
+.user-dropdown {
+    display: flex;
+    justify-content: space-between;
+    width: calc(75%);
+}
+
+.dropdown1, .dropdown2 {
+    flex: 3;
+}
+
+.solver-title {
+    color: white;
+    margin-top: 3vh;
+    margin-left: 4vh;
 }
