@@ -109,9 +109,11 @@ function getHandValue(hand, card)
 
     for (let i = 0; i < hand.length;i++)
     {
+        //isolate the number value from the card (ie: 7-A -> 7)
         let data = card.split("-");
         let value = data[0];
         
+        //converts A, J, Q, K to numeric values
         if (isNaN(value))
         {
             if (value == "A")
@@ -126,6 +128,7 @@ function getHandValue(hand, card)
     return handSum;
 }
 
+//if a hand has an Ace, increase its aceCount by 1
 function countAces(hand)
 {
     let aceCount = 0;
