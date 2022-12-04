@@ -73,8 +73,8 @@ function deal()
         playerHandSum = playerHand.getHandValue();
         dealerHandSum = dealerHand.getHandValue();
 
-        playerAceCount = incrementAce(playerHand);
-        dealerAceCount = incrementAce(dealerHand);
+        playerAceCount = countAces(playerHand);
+        dealerAceCount = countAces(dealerHand);
     }
 
     //cards in deck should be hidden, but cards in playerHand
@@ -93,7 +93,7 @@ function startGame()
         let card = deck.pop()
         {
             dealerHand.push(card);
-            hasAce();
+            countAces();
         }
     }
 
@@ -126,27 +126,16 @@ function getHandValue(hand, card)
     return handSum;
 }
 
-//checks if a hand has an Ace
-function hasAce(hand)
+function countAces(hand)
 {
-    let ret = false;
+    let aceCount = 0;
 
     for (let i = 0; i < hand.length; i++)
     {
         if (hand[i] == "A")
         {
-            ret = true;
+            aceCount++;
         }
-    }
-    return ret;
-}
-
-//increment act
-function incrementAce(hand)
-{
-    if(hand.hasAce())
-    {
-        aceCount++;
     }
     return aceCount;
 }
@@ -173,7 +162,7 @@ function hit()
     var card = deck.pop();
     playerHand.push(card);
     playerHandSum = playerHand.getHandValue();
-    playerAceCount = incrementAce(playerHand);
+    playerAceCount = countAces(playerHand);
     
     if (playerHand.softAce() > 21)
     {
@@ -183,6 +172,9 @@ function hit()
 
 function stand()
 {
+    playerAceCount = countAces(playerHand);
+    dealerAceCount = countAces(dealerHand);
+
     playerHandSum = softAce(playerHandSum, playerAceCount);
     dealerHandSum = softAce(dealerHandSum, dealerAceCount);
 
