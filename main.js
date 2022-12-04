@@ -4,7 +4,7 @@ document.getElementById('playLink').addEventListener('click', redirectPlay);
 document.getElementById('solverLink').addEventListener('click', redirectSolver);
 
 function redirectLearn() {
-    window.location.href = "learn.html";
+    window.location.href = "basics.html";
 }
 
 function redirectPlay() {
@@ -33,14 +33,45 @@ var dealerHand = new Array();
 //generates a deck of cards
 function generateDeck()
 {
-    //iterate through length of deck to push cards onto it
+    for (let i = 0; i < suites.length; i++)
+    {
+        for (let j = 0; i < values.length; j++)
+        {
+            deck.push(values[j] + "-" + suites[i]);
+        }
+    }
 }
 
 //randomizes the order of the generated cards
 function shuffle()
 {
-    //iterate through length of deck to randomize
+    for (let i = 0; i < deck.length; i++)
+    {
+        let j = Math.floor(Math.random() * deck.length);
+        let temp = deck[i];
+        deck[i] = deck[j];
+        deck[j] = temp;
+    }
+}
 
+//deal hands of cards to player and dealer
+function deal()
+{
+    for (let i = 0; i < 2; i++)
+    {
+        var playerCard = deck.pop();
+        var dealerCard = deck.pop();
+
+        playerHand.push(playerCard);
+        dealerHand.push(dealerCard);
+
+        //check if player or dealer have Aces
+        playerHand.hasAce();
+        dealerHand.hasAce();
+    }
+
+    //cards in deck should be hidden, but cards in playerHand
+    //and dealerHand should be flipped over
 }
 
 function startGame()
@@ -48,29 +79,65 @@ function startGame()
     generateDeck();
 	shuffle();
 	deal();
+
+    //dealer continues taking cards until their handValue is greater than or equal to 17
+    while (dealerHand.getHandValue < 17)
+    {
+        let card = deck.pop()
+        {
+            dealerHand.push(card);
+            hasAce();
+        }
+    }
 }
-	
-function deal()
+
+//returns value of a hand of cards
+function getHandValue(array, card)
 {
-    //pop 2 cards from deck
-    //push 2 cards to playerHand
+    let cardValue = 0;
+    let handSum = 0;
 
-    //pop 2 cards from deck
-    //push 2 cards to dealerHand
-
-    //cards in deck should be hidden, but scards in playerHand
-    //and dealerHand should be flipped over
-
+    for (let i = 0; i < array.length;i++)
+    {
+        let data = card.split("-");
+        let value = data[0];
+        
+        if (isNaN(value))
+        {
+            if (value == "A")
+            {
+                cardValue = 11;
+            }
+            cardValue = 10;
+        }
+        cardValue = parseInt(value);
+        handSum += cardValue;
+    }
+    return handSum;
 }
 
-//interprets value of player and dealer's cards
-function handValue()
+function isAce(card)
 {
-    //checks if you have an ace
-        //if you have an ace, decides if it's 1 or 11
-    
-    //calculate values of player and dealer hands
+    if (card[0] == "A")
+    {
+        return true;
+    }
+    return false;
 }
+
+function hasAce(array)
+{
+    for (let i = 0; i < array.length; i++)
+    {
+        if (array[i].isAce)
+        {
+            return true;
+        }
+    }
+}
+
+function softAce()
+
 
 function hit()
 {
