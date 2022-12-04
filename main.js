@@ -29,6 +29,11 @@ var suites = ["C", "D", "H", "S"];
 var deck = new Array();
 var playerHand = new Array();
 var dealerHand = new Array();
+var playerHandSum;
+var dealerHandSum;
+var playerAceCount = 0;
+var dealerAceCount = 0;
+var canHit = true;
 
 //generates a deck of cards
 function generateDeck()
@@ -65,9 +70,11 @@ function deal()
         playerHand.push(playerCard);
         dealerHand.push(dealerCard);
 
-        //check if player or dealer have Aces
-        playerHand.hasAce();
-        dealerHand.hasAce();
+        playerHandSum = playerHand.getHandValue();
+        dealerHandSum = dealerHand.getHandValue();
+
+        playerAceCount = incrementAce(playerHand);
+        dealerAceCount = incrementAce(dealerHand);
     }
 
     //cards in deck should be hidden, but cards in playerHand
@@ -81,7 +88,7 @@ function startGame()
 	deal();
 
     //dealer continues taking cards until their handValue is greater than or equal to 17
-    while (dealerHand.getHandValue < 17)
+    while (dealerHand.getHandValue() < 17)
     {
         let card = deck.pop()
         {
@@ -89,15 +96,18 @@ function startGame()
             hasAce();
         }
     }
+
+    playerHandSum = playerHand.getHandValue();
+    dealerHandSum = dealerHand.getHandValue();
 }
 
 //returns value of a hand of cards
-function getHandValue(array, card)
+function getHandValue(hand, card)
 {
     let cardValue = 0;
     let handSum = 0;
 
-    for (let i = 0; i < array.length;i++)
+    for (let i = 0; i < hand.length;i++)
     {
         let data = card.split("-");
         let value = data[0];
@@ -116,50 +126,97 @@ function getHandValue(array, card)
     return handSum;
 }
 
-function isAce(card)
+//checks if a hand has an Ace
+function hasAce(hand)
 {
-    if (card[0] == "A")
-    {
-        return true;
-    }
-    return false;
-}
+    let ret = false;
 
-function hasAce(array)
-{
-    for (let i = 0; i < array.length; i++)
+    for (let i = 0; i < hand.length; i++)
     {
-        if (array[i].isAce)
+        if (hand[i] == "A")
         {
-            return true;
+            ret = true;
         }
     }
+    return ret;
 }
 
-function softAce()
+//increment act
+function incrementAce(hand)
+{
+    if(hand.hasAce())
+    {
+        aceCount++;
+    }
+    return aceCount;
+}
 
+//reduces the value of an Ace if counting it as 11 makes the player's hand exceed 21
+function softAce(handSum, aceCount)
+{
+    while(handSum > 21 && aceCount)
+    {
+        handSum -= 10;
+        aceCount -= 1;
+    }
+    return handSum;
+}
 
 function hit()
 {
     //check if you can hit
+    if (!canHit)
+    {
+        return;
+    }
+
+    var card = deck.pop();
+    playerHand.push(card);
+    playerHandSum = playerHand.getHandValue();
+    playerAceCount = incrementAce(playerHand);
     
-    //pop a card from deck to playerHand
-    //cannot hit if your hand's value exceeds 21 (nuance here w/ Aces)
+    if (playerHand.softAce() > 21)
+    {
+        canHit = false;
+    }
 }
 
-function stay()
+function stand()
 {
-    //if player handValue > 21, you lose
-    //else if dealer handValue > 21, you win
-    //else if both your handValues > 21, tie
-    //else if your handValue > dealerHandValue, you win
-    //else if your handValue < dealerHandValue, you lose
+    playerHandSum = softAce(playerHandSum, playerAceCount);
+    dealerHandSum = softAce(dealerHandSum, dealerAceCount);
+
+    canHit = false;
+    
+    let message = "";
+
+    if(playerHandSum > 21)
+    {
+        message = "Bust!"
+    }
+    else if (dealerHandSum > 21)
+    {
+        message = "You win!"
+    }
+    else if (playerHandSum == dealerHandSum)
+    {
+        message = "Tie!"
+    }
+    else if (playerHandSum > dealerHandSum)
+    {
+        message = "You Win!"
+    }
+    else if (playerHandSum < dealerHandSum)
+    {
+        message = "You lose!"
+    }
 }
 
 //resets the game
 function newGame()
 {
-    //empties playerHand and dealerHand
-    //creates and shuffles new deck
-    //deals
+    playerHand = [];
+    dealerHand = [];
+    generateDeck();
+    shuffleDeck();
 }
