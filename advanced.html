@@ -34,36 +34,49 @@
     <!-- main article section -->
     <main>
         <div class="article">
-            <h1> Basics of Blackjack</h1>
-
+            <br>
             <section id="intro">
+                <h2 class="learnHeading">Introduction to Advanced Strategy</h2>
                 <p class="learnPara">
                     Counting cards is a strategy a player can use to determine whether
                     the player or the dealer has an advantage on the next hand. This
                     gives card counters a way to overcome the house edge and win more consistently at Blackjack.
-                
-                    The four steps of counting cards:
-                    <ul>
-                        <li>Assign a value of each card</li>
-                        <li>Keep a “running count” based on the values of the dealt card</li>
-                        <li>Use this information to calculate the “true count,” or the
-                            count per deck</li>
-                        <li>Adjust bets as the true count rises</li>
-                    </ul>
                 </p>
             </section>
-            <section id="temp1">
-                <h2 class="learnHeading">Step 1:Assign a Value to Each Card</h2>
+            <section id="advstrat">
+                <h2 class="learnHeading">Strategy Charts</h2>
                 <p class="learnPara">
-                    The most common card counting system is Hi-Lo, in which the card values are as follows:
-                    <ul>
-                        <li>2 - 6 = +1</li>
-                        <li>7 - 9 = 0</li>
-                        <li>10 - Ace = -1</li>
-                    </ul>
+                    placeholder
                 </p>
             </section>
-            <section id="temp2">
+            <section id="cardcount">
+                <h2 class="learnHeading">Card Counting</h2>
+                <p class="learnPara">
+                    placeholder
+                </p>
+            </section>
+            <section id="step1">
+                <h2 class="learnHeading">Step 1:Assign a Value to Each Card</h2>
+                <p class="learnPara"> The four steps of counting cards: </p>
+                <ul class="bullets">
+                    <li class="bullets-list">Assign a value of each card</li>
+                    <li class="bullets-list">Keep a “running count” based on the values of the dealt card</li>
+                    <li class="bullets-list">Use this information to calculate the “true count,” or the
+                        count per deck</li>
+                    <li class="bullets-list">Adjust bets as the true count rises</li>
+                </ul>
+
+                <p class="learnPara"> 
+                    The most common card counting system is Hi-Lo, in which the card values are as follows:
+                </p>
+                    <ul class="bullets">
+                        <li class="bullets-list">2 - 6 = +1</li>
+                        <li class="bullets-list">7 - 9 = 0</li>
+                        <li class="bullets-list">10 - Ace = -1</li>
+                    </ul>
+            </section>
+            <section id="step2">
+                <br>
                 <h2 class="learnHeading">Step 2: Keep a “Running Count”</h2>
                 <p class="learnPara">
                     Based on the card dealt, add the assigned value to the current running count
@@ -71,8 +84,8 @@
                     Conversely, as the running count decreases, the advantage shifts to the house.
                 </p>
             </section>
-            <section id="temp3">
-                <h2 class="learnHeading">Keep a “True Count”</h2>
+            <section id="step3">
+                <h2 class="learnHeading">Step 3: Keep a “True Count”</h2>
                 <p class="learnPara">
                     Keeping a true count, in addition to a running count allows the player to continue
                     beating the house edge even when playing with multiple decks.
@@ -87,13 +100,13 @@
                     The calculation for true count is the (running count) / (decks remaining).
                 </p>
                 <p class="learnPara">
-                    Example: If the running count is 8, and there are 4 decks remaining, the true count is 2.
+                    <b>Example:</b> If the running count is 8, and there are 4 decks remaining, the true count is 2.
                 <p class="learnPara">
-                    Example: if the running count is -5 and there are 2 decks remaining, the true count is -2.
+                    <b>Example:</b> if the running count is -5 and there are 2 decks remaining, the true count is -2.
                 </p>
                 </section>
             </section>
-            <section id="temp4">
+            <section id="step4">
                 <h2 class="learnHeading">Step 4: Change Your Bets Based on True Count</h2>
                 <p class="learnPara">
                     To put this information to use, the player should adjust their bets according to
@@ -106,11 +119,18 @@
 
         <!-- side nav bar -->
         <nav class="sidenav">
-            <ol>      
-                <li><a href="#temp1">Step 1: Assign a Value to Each Card</a></li>
-                <li><a href="#temp2">Step 2: Keep a "Running Count"</a></li>     
-                <li><a href="#temp3">Step 3: Keep a "True Count"</a></li>     
-                <li><a href="#temp4">Step 4: Change Your Bets Based on True Count</a></li>     
+            <ol>    
+                <li><a href="intro"> Introduction to Advanced Strategy</a></li>  
+                <li><a href="advstrat"> Strategy Charts</a></li>  
+                <li><a href="cardcount"> Card Counting</a></li> 
+                <li>
+                <ul class="side-nav-ul">
+                    <li class="side-nav-li"><a href="#step1">Step 1: Assign a Value to Each Card</a></li>
+                    <li class="side-nav-li"><a href="#step2">Step 2: Keep a "Running Count"</a></li>     
+                    <li class="side-nav-li"><a href="#step3">Step 3: Keep a "True Count"</a></li>     
+                    <li class="side-nav-li"><a href="#step4">Step 4: Change Your Bets Based on True Count</a></li>     
+                </ul>
+                </li> 
             </ol>
         </nav>
 
