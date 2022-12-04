@@ -26,5 +26,96 @@
             <div class="dot"></div>
         </div>
     </nav>
+
+    <!-- solver -->
+    <h2 class="solver-title"> Blackjack Solver </h1>
+    <div class="solver-container"> 
+        <div class="solver-words"> 
+            <h2 class="solver-heading"> Dealer's Hand</h2> 
+            <h2 class="solver-heading"> Your Hand</h2>
+
+            <h2 class="solver-heading"> Best Move: </h2>
+            <h3 class="best-move"></h3>
+        </div>
+
+        <div class="solver-dropdowns">
+            <div class="dealer-dropdown">
+                <div class="dropdown">
+                    <form name="dealer-card" id="dealer-card">
+                        <label for="dealer-card" class="form-label" id="dealer-card-id">Dealer Card: </label>
+                        <select id="cards">
+                            <option value="ace"> Ace </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                            <option value="4"> 4 </option>
+                            <option value="5"> 5 </option>
+                            <option value="6"> 6 </option>
+                            <option value="7"> 7 </option>
+                            <option value="8"> 8 </option>
+                            <option value="9"> 9 </option>
+                            <option value="10"> 10 </option>
+                            <option value="jack"> Jack </option>
+                            <option value="queen"> Queen </option>
+                            <option value="king"> King </option>
+                        </select>
+                    </form>
+                </div>
+            </div>
+            <div class="user-dropdown">
+                <div class="dropdown">
+                    <form name="user-card-1" id="user-card-1">
+                        <label for="user-card-1" class="form-label" id="user-card-1-id">User Card 1: </label>
+                        <select id="cards">
+                            <option value="ace"> Ace </option>
+                            <option value="2"> 2 </option>
+                            <option value="3"> 3 </option>
+                            <option value="4"> 4 </option>
+                            <option value="5"> 5 </option>
+                            <option value="6"> 6 </option>
+                            <option value="7"> 7 </option>
+                            <option value="8"> 8 </option>
+                            <option value="9"> 9 </option>
+                            <option value="10"> 10 </option>
+                            <option value="jack"> Jack </option>
+                            <option value="queen"> Queen </option>
+                            <option value="king"> King </option>
+                        </select>
+                    </form>
+                </div>
+                <div class="dropdown">
+                    <form name="user-card-2" id="user-card-2">
+                        <label for="user-card-2" class="form-label" id="user-card-2-id">User Card 2: </label>
+                        <select id="cards">
+                                <option value="ace"> Ace </option>
+                                <option value="2"> 2 </option>
+                                <option value="3"> 3 </option>
+                                <option value="4"> 4 </option>
+                                <option value="5"> 5 </option>
+                                <option value="6"> 6 </option>
+                                <option value="7"> 7 </option>
+                                <option value="8"> 8 </option>
+                                <option value="9"> 9 </option>
+                                <option value="10"> 10 </option>
+                                <option value="jack"> Jack </option>
+                                <option value="queen"> Queen </option>
+                                <option value="king"> King </option>
+                        </select>
+                    </form>
+                </div>
+                <div class="button">
+                    <button id="submit" type="button" onclick="calculateOdds()">Calculate Odds </button>
+                </div>
+            </div>
+                <label class="form-label" id="best-move"> </label>
+        </div>
+    </div>
+
+
+    <!-- solver about and how to use-->
+
+    <!-- solver.js for separate file working purposes ONLY-->
+    <script language="javascript" src="solver.js"> </script>
+    <script language="javascript" src="main.js"> </script>
+
 </body>
 </html>
