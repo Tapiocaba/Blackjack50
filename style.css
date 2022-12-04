@@ -276,8 +276,6 @@ main {
 .solver-container {
     display: flex;
     margin: 4vh;
-    border-color: purple;
-    border-style: dashed;
     align-items: center;
 }
 
@@ -289,14 +287,10 @@ main {
 
 .solver-words {
     flex: 1;
-    border-color: lightblue;
-    border-style: dashed;
 }
 
 .solver-dropdowns {
     flex: 2;
-    border-color: lightcoral;
-    border-style: dashed;
 }
 
 .form-label {
@@ -307,8 +301,6 @@ main {
     display: flex;
     justify-content: space-between;
     width: calc(75%);
-    border-color: lightgreen;
-    border-style: dashed;
 }
 
 .dropdown1, .dropdown2 {

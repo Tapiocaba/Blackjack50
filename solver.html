@@ -12,6 +12,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     
     <link href="style.css" rel="stylesheet" type="text/css" />
+
 </head>
 <body>
     <!-- navbar -->
@@ -33,7 +34,6 @@
         <div class="solver-words"> 
             <h2 class="solver-heading"> Dealer's Hand</h2> 
             <h2 class="solver-heading"> Your Hand</h2>
-
             <h2 class="solver-heading"> Best Move: </h2>
             <h3 class="best-move"></h3>
         </div>
@@ -41,10 +41,10 @@
         <div class="solver-dropdowns">
             <div class="dealer-dropdown">
                 <div class="dropdown">
-                    <form name="dealer-card" id="dealer-card">
+                    <form name="odds-calculator" id="odds-calculator">
                         <label for="dealer-card" class="form-label" id="dealer-card-id">Dealer Card: </label>
-                        <select id="cards">
-                            <option value="ace"> Ace </option>
+                        <select id="dealer-card">
+                            <option value="1"> Ace </option>
                             <option value="2"> 2 </option>
                             <option value="3"> 3 </option>
                             <option value="4"> 4 </option>
@@ -54,60 +54,54 @@
                             <option value="8"> 8 </option>
                             <option value="9"> 9 </option>
                             <option value="10"> 10 </option>
-                            <option value="jack"> Jack </option>
-                            <option value="queen"> Queen </option>
-                            <option value="king"> King </option>
+                            <option value="10"> Jack </option>
+                            <option value="10"> Queen </option>
+                            <option value="10"> King </option>
                         </select>
+                        <div class="user-dropdown">
+                            <div class="dropdown">
+                                    <label for="card1" class="form-label" id="user-card-1-id">User Card 1: </label>
+                                    <select id="user-card-1">
+                                        <option value="1"> Ace </option>
+                                        <option value="2"> 2 </option>
+                                        <option value="3"> 3 </option>
+                                        <option value="4"> 4 </option>
+                                        <option value="5"> 5 </option>
+                                        <option value="6"> 6 </option>
+                                        <option value="7"> 7 </option>
+                                        <option value="8"> 8 </option>
+                                        <option value="9"> 9 </option>
+                                        <option value="10"> 10 </option>
+                                        <option value="10"> Jack </option>
+                                        <option value="10"> Queen </option>
+                                        <option value="10"> King </option>
+                                    </select>
+                            </div>
+                            <div class="dropdown">
+                                    <label for="card2" class="form-label" id="user-card-2-id">User Card 2: </label>
+                                    <select id="user-card-2">
+                                            <option value="1"> Ace </option>
+                                            <option value="2"> 2 </option>
+                                            <option value="3"> 3 </option>
+                                            <option value="4"> 4 </option>
+                                            <option value="5"> 5 </option>
+                                            <option value="6"> 6 </option>
+                                            <option value="7"> 7 </option>
+                                            <option value="8"> 8 </option>
+                                            <option value="9"> 9 </option>
+                                            <option value="10"> 10 </option>
+                                            <option value="10"> Jack </option>
+                                            <option value="10"> Queen </option>
+                                            <option value="10"> King </option>
+                                    </select>
+                            </div>
+                            <button id="submit" form="odds-calculator" type="submit">Calculate Odds </button>
                     </form>
                 </div>
             </div>
-            <div class="user-dropdown">
-                <div class="dropdown">
-                    <form name="user-card-1" id="user-card-1">
-                        <label for="user-card-1" class="form-label" id="user-card-1-id">User Card 1: </label>
-                        <select id="cards">
-                            <option value="ace"> Ace </option>
-                            <option value="2"> 2 </option>
-                            <option value="3"> 3 </option>
-                            <option value="4"> 4 </option>
-                            <option value="5"> 5 </option>
-                            <option value="6"> 6 </option>
-                            <option value="7"> 7 </option>
-                            <option value="8"> 8 </option>
-                            <option value="9"> 9 </option>
-                            <option value="10"> 10 </option>
-                            <option value="jack"> Jack </option>
-                            <option value="queen"> Queen </option>
-                            <option value="king"> King </option>
-                        </select>
-                    </form>
-                </div>
-                <div class="dropdown">
-                    <form name="user-card-2" id="user-card-2">
-                        <label for="user-card-2" class="form-label" id="user-card-2-id">User Card 2: </label>
-                        <select id="cards">
-                                <option value="ace"> Ace </option>
-                                <option value="2"> 2 </option>
-                                <option value="3"> 3 </option>
-                                <option value="4"> 4 </option>
-                                <option value="5"> 5 </option>
-                                <option value="6"> 6 </option>
-                                <option value="7"> 7 </option>
-                                <option value="8"> 8 </option>
-                                <option value="9"> 9 </option>
-                                <option value="10"> 10 </option>
-                                <option value="jack"> Jack </option>
-                                <option value="queen"> Queen </option>
-                                <option value="king"> King </option>
-                        </select>
-                    </form>
-                </div>
-                <div class="button">
-                    <button id="submit" type="button" onclick="calculateOdds()">Calculate Odds </button>
-                </div>
             </div>
-                <label class="form-label" id="best-move"> </label>
-        </div>
+                <p class="form-label" id="best-move"> </p>
+            </div>
     </div>
 
 
