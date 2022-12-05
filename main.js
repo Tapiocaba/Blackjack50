@@ -1,50 +1,36 @@
-// Clickable divs for index
-document.getElementById('learnLink').addEventListener('click', redirectLearn);
-document.getElementById('playLink').addEventListener('click', redirectPlay);
-document.getElementById('solverLink').addEventListener('click', redirectSolver);
-
-function redirectLearn() {
-    window.location.href = "basics.html";
-}
-
-function redirectPlay() {
-    window.location.href = "play.html";
-}
-
-function redirectSolver() {
-    window.location.href = "solver.html";
-}
-
-// overlay display
-function overlayOn() {
-    document.getElementById("overlay").style.display = "block";
-}
-
-function overlayOff() {
-    document.getElementById("overlay").style.display = "none";
-}
-
-var values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
-var suites = ["C", "D", "H", "S"];
-var deck = new Array();
-var playerHand = new Array();
-var dealerHand = new Array();
-var playerHandSum;
-var dealerHandSum;
-var playerAceCount = 0;
-var dealerAceCount = 0;
+var deck = [];
+var playerHand = [];
+var dealerHand = [];
+var playerHandSum = 0;
+var dealerHandSum = 0;
+var hidden;
 var canHit = true;
+
+let newGameButton = document.getElementById('new-game-button');
+let hitButton = document.getElementById('hit-button');
+let stayButton = document.getElementById('stay-button');
+
+function start()
+{
+    generateDeck();
+    shuffle();
+    startGame();
+}
 
 //generates a deck of cards
 function generateDeck()
 {
+    let values = ["2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K", "A"];
+    let suites = ["C", "D", "H", "S"]
+
     for (let i = 0; i < suites.length; i++)
     {
-        for (let j = 0; i < values.length; j++)
+        for (let j = 0; j < values.length; j++)
         {
             deck.push(values[j] + "-" + suites[i]);
         }
     }
+    return deck;
 }
 
 //randomizes the order of the generated cards
@@ -57,98 +43,47 @@ function shuffle()
         deck[i] = deck[j];
         deck[j] = temp;
     }
+    console.log(deck);
 }
 
-//deal hands of cards to player and dealer
-function deal()
-{
-    for (let i = 0; i < 2; i++)
-    {
-        var playerCard = deck.pop();
-        var dealerCard = deck.pop();
-
-        playerHand.push(playerCard);
-        dealerHand.push(dealerCard);
-
-        playerHandSum = playerHand.getHandValue();
-        dealerHandSum = dealerHand.getHandValue();
-
-        playerAceCount = countAces(playerHand);
-        dealerAceCount = countAces(dealerHand);
-    }
-
-    //cards in deck should be hidden, but cards in playerHand
-    //and dealerHand should be flipped over
-}
-
+//plays the blackjack game
 function startGame()
 {
-    generateDeck();
-	shuffle();
-	deal();
+    alert("startGame runs");
+    hidden = deck.pop();
+    dealerHand.push(hidden);
+    alert(dealerHand);
+    updateHandSums();
+    alert(dealerHandSum);
 
     //dealer continues taking cards until their handValue is greater than or equal to 17
-    while (dealerHand.getHandValue() < 17)
+    while (dealerHandSum < 17)
     {
+        let cardImg = document.createElement("img");
         let card = deck.pop()
-        {
-            dealerHand.push(card);
-            countAces();
-        }
-    }
-
-    playerHandSum = playerHand.getHandValue();
-    dealerHandSum = dealerHand.getHandValue();
-}
-
-//returns value of a hand of cards
-function getHandValue(hand, card)
-{
-    let cardValue = 0;
-    let handSum = 0;
-
-    for (let i = 0; i < hand.length;i++)
-    {
-        let data = card.split("-");
-        let value = data[0];
+        cardImg.src = "./cards/" + card + ".png";
+        dealerHand.push(card);
+        updateHandSums();
+        document.getElementById("dealer-cards").append(cardImg);
         
-        if (isNaN(value))
-        {
-            if (value == "A")
-            {
-                cardValue = 11;
-            }
-            cardValue = 10;
-        }
-        cardValue = parseInt(value);
-        handSum += cardValue;
+        alert(dealerHand);
     }
-    return handSum;
-}
+    console.log(dealerSum);
 
-function countAces(hand)
-{
-    let aceCount = 0;
-
-    for (let i = 0; i < hand.length; i++)
+    for (let i = 0; i < 2; i++)
     {
-        if (hand[i] == "A")
-        {
-            aceCount++;
-        }
-    }
-    return aceCount;
-}
+        let cardImg = document.createElement("img");
+        let card = deck.pop();
+        cardImg.src = "./cards/" + card + ".png";
+        playerHand.push(card);
+        updateHandSums();
+        document.getElementById("player-cards").append(cardImg);
 
-//reduces the value of an Ace if counting it as 11 makes the player's hand exceed 21
-function softAce(handSum, aceCount)
-{
-    while(handSum > 21 && aceCount)
-    {
-        handSum -= 10;
-        aceCount -= 1;
+        alert(playerHand);
     }
-    return handSum;
+    console.log(playerHandSum);
+    document.getElementById("hit").addEventListener("click", hit);
+    document.getElementById("stand").addEventListener("click", stand);
 }
 
 function hit()
@@ -159,10 +94,12 @@ function hit()
         return;
     }
 
+    let cardImg = document.createElement("img");
     var card = deck.pop();
+    cardImg.src = "./cards/" + card + ".png";
     playerHand.push(card);
-    playerHandSum = playerHand.getHandValue();
-    playerAceCount = countAces(playerHand);
+    updateHandSums();
+    document.getElementById("player-cards").append(cardImg);
     
     if (playerHand.softAce() > 21)
     {
@@ -172,13 +109,10 @@ function hit()
 
 function stand()
 {
-    playerAceCount = countAces(playerHand);
-    dealerAceCount = countAces(dealerHand);
-
-    playerHandSum = softAce(playerHandSum, playerAceCount);
-    dealerHandSum = softAce(dealerHandSum, dealerAceCount);
+    updateHandSums();
 
     canHit = false;
+    document.getElementById("hidden").src = "./cards/" + hidden + ".png";
     
     let message = "";
 
@@ -202,6 +136,56 @@ function stand()
     {
         message = "You lose!"
     }
+
+    document.getElementById("dealer-sum").innerText = dealerHandSum;
+    document.getElementById("player-sum").innerText = playerHandSum;
+    document.getElementById("results").innerText = message;
+}
+
+
+//returns value of a hand of cards
+function getHandValue(hand)
+{
+    let handSum = 0;
+    let cardValue = 0;
+    let hasAce = false;
+
+    for (let i = 0; i < hand.length; i++)
+    {
+        let data = hand[i].split("-");
+        let value = data[0];
+        
+        if (isNaN(value))
+        {
+            if (value == "A")
+            {
+                cardValue = 11;
+                hasAce = true;
+            }
+            else
+            {
+                cardValue = 10;
+            }
+        }
+        else
+        {
+            cardValue = parseInt(value);
+            alert(cardValue);
+        }
+        handSum += cardValue;
+
+        if(hasAce && handSum >= 21)
+        {
+            handSum -= 10;
+        }
+    }
+    return handSum;
+}
+
+function updateHandSums()
+{
+    dealerHandSum = getHandValue(dealerHand);
+    playerHandSum = getHandValue(playerHand);
 }
 
 //resets the game
@@ -210,5 +194,7 @@ function newGame()
     playerHand = [];
     dealerHand = [];
     generateDeck();
-    shuffleDeck();
+    shuffle();
 }
+
+window.onload = start();

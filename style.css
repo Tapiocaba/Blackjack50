@@ -7,6 +7,7 @@
 body {
     background-color: var(--bg-color);
     font-family: 'Courier New', monospace;
+    text-align: center;
 }
 
 /* navbar  */
@@ -117,4 +118,16 @@ body {
 
 .navMenu a:hover {
     color: var(--color-dot);
+}
+
+#dealer-cards img {
+    height: 175px;
+    width: 125px;
+    margin: 1px;
+}
+
+#player-cards img {
+    height: 175px;
+    width: 125px;
+    margin: 1px;
 }
