@@ -65,11 +65,34 @@ function startGame()
         dealerHand.push(card);
         updateHandSums();
         document.getElementById("dealer-cards").append(cardImg);
+        {
+            dealerHand.push(card);
+            countAces();
+        }
+    }
+
+    playerHandSum = playerHand.getHandValue();
+    dealerHandSum = dealerHand.getHandValue();
+}
+
+//returns value of a hand of cards
+function getHandValue(hand, card)
+{
+    let cardValue = 0;
+    let handSum = 0;
+
+    for (let i = 0; i < hand.length;i++)
+    {
+        //isolate the number value from the card (ie: 7-A -> 7)
+        let data = card.split("-");
+        let value = data[0];
         
+        //converts A, J, Q, K to numeric values
         alert(dealerHand);
     }
     console.log(dealerSum);
 
+//if a hand has an Ace, increase its aceCount by 1
     for (let i = 0; i < 2; i++)
     {
         let cardImg = document.createElement("img");
