@@ -39,7 +39,6 @@ Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-f
 1. Clone the repository and open file
    ```sh
    git clone https://github.com/Tapiocaba/Blackjack.git
-   cd Blackjack
    ```
 2. Utilize your IDE to open the website. On VSCode, we downloaded the 'open in browser' extention, but you can also do the following:
    ```sh

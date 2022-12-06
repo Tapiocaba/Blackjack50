@@ -151,6 +151,10 @@ html {
 .card-groups, .card-group, .card{
     aspect-ratio: 5/7;
     width: 30vmin;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    object-fit:cover;
 }
 
 .big-group .card-group .card {
@@ -160,17 +164,14 @@ html {
 }
 
 .card:nth-child(1) {
-    background-color: purple;
     transform: translateX(-10%) rotate(-2deg);
 }
 
 .card:nth-child(2) {
-    background-color: white;
     transform: rotate(3deg);
 }
 
 .card:nth-child(3) {
-    background-color: green;
     transform: translateX(-3%) rotate(-3deg);
 }
 
