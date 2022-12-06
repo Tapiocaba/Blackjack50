@@ -6,9 +6,10 @@ All references, links, and code inspo that was used for the project.
 * []() https://codepen.io/shshaw/pen/YOPqLb
 * []() https://www.bram.us/2020/01/10/smooth-scrolling-sticky-scrollspy-navigation/
 
-## Card Animation:
+## Card Animation + Buttons:
 * []() https://www.youtube.com/watch?v=QGVXmoZWZuw
 * []() https://www.youtube.com/watch?v=6TYkDy54q4E
+* []() https://getcssscan.com/css-buttons-examples
 
 ## Confetti / Celebration: 
 * []() //www.youtube.com/watch?v=CimECfuKtmg

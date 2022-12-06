@@ -28,6 +28,23 @@
         </div>
     </nav>
 
+    <!-- blackjack game html -->
+    <div class="game-container">
+        <h2 class="play-heading">Dealer: <span id="dealer-sum"></span></h2>
+        <div id="dealer-cards">
+            <img id="hidden" src="./card_images/hidden.png">
+        </div>
+        <h2 class="play-heading">Player: <span id="player-sum"></span></h2>
+        <div id="your-cards"></div>
+        <br>
+        <div class="game-buttons">
+            <button class="play-button" id="hit">Hit</button>
+            <button class="play-button" id="stay">Stay</button>
+        </div>
+        
+        <p id="results"></p>
+    </div>
+
     <script language="javascript" src="main.js">  </script>
 
 </body>
