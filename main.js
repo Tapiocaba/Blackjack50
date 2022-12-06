@@ -4,11 +4,6 @@ var dealerHand = [];
 var playerHandSum = 0;
 var dealerHandSum = 0;
 var hidden;
-var canHit = true;
-
-let newGameButton = document.getElementById('new-game-button');
-let hitButton = document.getElementById('hit-button');
-let stayButton = document.getElementById('stay-button');
 
 function start()
 {
@@ -16,6 +11,10 @@ function start()
     shuffle();
     startGame();
 }
+
+document.getElementById("hit").addEventListener("click", hit);
+document.getElementById("stand").addEventListener("click", stand);
+document.getElementById("new-game").addEventListener("click", newGame);
 
 //generates a deck of cards
 function generateDeck()
@@ -49,12 +48,9 @@ function shuffle()
 //plays the blackjack game
 function startGame()
 {
-    alert("startGame runs");
     hidden = deck.pop();
     dealerHand.push(hidden);
-    alert(dealerHand);
     updateHandSums();
-    alert(dealerHandSum);
 
     //dealer continues taking cards until their handValue is greater than or equal to 17
     while (dealerHandSum < 17)
@@ -65,35 +61,27 @@ function startGame()
         dealerHand.push(card);
         updateHandSums();
         document.getElementById("dealer-cards").append(cardImg);
-        {
-            dealerHand.push(card);
-            countAces();
-        }
     }
+    
+    alert("dealerHand dealt")
 
-    playerHandSum = playerHand.getHandValue();
-    dealerHandSum = dealerHand.getHandValue();
+    for (let i = 0; i < 2; i++)
+    {
+        let cardImg = document.createElement("img");
+        let card = deck.pop();
+        alert(card)
+        cardImg.src = "./cards/" + card + ".png";
+        playerHand.push(card);
+        updateHandSums();
+        alert("playerHand: " + playerHand);
+        alert("playerHandSum: " + playerHandSum);
+        document.getElementById("player-cards").append(cardImg);
+    }
 }
 
-//returns value of a hand of cards
-function getHandValue(hand, card)
+function hit()
 {
-    let cardValue = 0;
-    let handSum = 0;
-
-    for (let i = 0; i < hand.length;i++)
-    {
-        //isolate the number value from the card (ie: 7-A -> 7)
-        let data = card.split("-");
-        let value = data[0];
-        
-        //converts A, J, Q, K to numeric values
-        alert(dealerHand);
-    }
-    console.log(dealerSum);
-
-//if a hand has an Ace, increase its aceCount by 1
-    for (let i = 0; i < 2; i++)
+    if (playerHandSum < 21)
     {
         let cardImg = document.createElement("img");
         let card = deck.pop();
@@ -101,32 +89,10 @@ function getHandValue(hand, card)
         playerHand.push(card);
         updateHandSums();
         document.getElementById("player-cards").append(cardImg);
-
-        alert(playerHand);
     }
-    console.log(playerHandSum);
-    document.getElementById("hit").addEventListener("click", hit);
-    document.getElementById("stand").addEventListener("click", stand);
-}
-
-function hit()
-{
-    //check if you can hit
-    if (!canHit)
+    else
     {
         return;
-    }
-
-    let cardImg = document.createElement("img");
-    var card = deck.pop();
-    cardImg.src = "./cards/" + card + ".png";
-    playerHand.push(card);
-    updateHandSums();
-    document.getElementById("player-cards").append(cardImg);
-    
-    if (playerHand.softAce() > 21)
-    {
-        canHit = false;
     }
 }
 
@@ -134,12 +100,11 @@ function stand()
 {
     updateHandSums();
 
-    canHit = false;
     document.getElementById("hidden").src = "./cards/" + hidden + ".png";
     
     let message = "";
 
-    if(playerHandSum > 21)
+    if (playerHandSum > 21)
     {
         message = "Bust!"
     }
@@ -164,7 +129,6 @@ function stand()
     document.getElementById("player-sum").innerText = playerHandSum;
     document.getElementById("results").innerText = message;
 }
-
 
 //returns value of a hand of cards
 function getHandValue(hand)
@@ -193,7 +157,6 @@ function getHandValue(hand)
         else
         {
             cardValue = parseInt(value);
-            alert(cardValue);
         }
         handSum += cardValue;
 
@@ -216,8 +179,7 @@ function newGame()
 {
     playerHand = [];
     dealerHand = [];
-    generateDeck();
-    shuffle();
+    start();
 }
 
 window.onload = start();
