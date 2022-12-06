@@ -129,11 +129,11 @@ Working on this project was very rewarding, as we had to utilize Git, pull reque
 
 Other features for future iterations can be found in README.md.
 
-References: [https://github.com/Tapiocaba/Blackjack/blob/main/references.md](https://github.com/Tapiocaba/Blackjack/blob/main/references.md)
+References: [https://github.com/Tapiocaba/Blackjack50/blob/main/references.md](https://github.com/Tapiocaba/Blackjack50/blob/main/references.md)
 
 <!-- CONTACT -->
 ## Contact
 
 Lisa Lin - lisalin@college.harvard.edu
 Stella Lei - slei@college.harvard.edu
-Project Link: [https://github.com/Tapiocaba/Blackjack](https://github.com/Tapiocaba/Blackjack)
+Project Link: [https://github.com/Tapiocaba/Blackjack50](https://github.com/Tapiocaba/Blackjack50)

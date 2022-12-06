@@ -26,7 +26,7 @@
 ## About The Project
 For our CS50 Final Project, we built all-in-one website to teach a player Blackjack. This includes descriptions of basic and advanced strategies, a Blackjack simulator, and a best move calculator.  
 
-Demonstration: [https://youtube.com](https://example.com)
+Demonstration: [https://youtu.be/r3BeT1iml8Y](https://youtu.be/r3BeT1iml8Y)
 
 Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-for-CS50?node-id=0%3A1&t=6kb7p5gngK0dd5A2-1)
 
@@ -37,7 +37,7 @@ Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-f
 
 1. Clone the repository and open file
    ```sh
-   git clone https://github.com/Tapiocaba/Blackjack.git
+   git clone https://github.com/Tapiocaba/Blackjack50.git
    ```
 2. Utilize your IDE to open the website. On VSCode, we downloaded the 'open in browser' extention, but you can also do the following:
    ```sh
@@ -78,7 +78,7 @@ Lisa Lin - lisalin@college.harvard.edu
 
 Stella Lei - slei@college.harvard.edu
 
-Project Link: [https://github.com/Tapiocaba/Blackjack](https://github.com/Tapiocaba/Blackjack)
+Project Link: [https://github.com/Tapiocaba/Blackjack50](https://github.com/Tapiocaba/Blackjack50)
 
 
 <!-- ACKNOWLEDGMENTS -->
@@ -87,5 +87,5 @@ Project Link: [https://github.com/Tapiocaba/Blackjack](https://github.com/Tapioc
 * []() Andrew Holmes, Kelly Ding, and all of the other amazing CS50 TFs, CAs, and staff that helped us implement our project.
 * []() README template from [othneildrew](https://github.com/othneildrew/Best-README-Template).
 
-References: [https://github.com/Tapiocaba/Blackjack/blob/main/references.md](https://github.com/Tapiocaba/Blackjack/blob/main/references.md)
+References: [https://github.com/Tapiocaba/Blackjack50/blob/main/references.md](https://github.com/Tapiocaba/Blackjack50/blob/main/references.md)
 
