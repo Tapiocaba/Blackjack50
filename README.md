@@ -56,6 +56,7 @@ Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-f
 
 * Home:
   * this is a placeholder
+  
   ![alt text](https://ichef.bbci.co.uk/news/976/cpsprodpb/13F00/production/_95146618_bills.jpg)
 
   Our home page utilzes CSS animations and transform to have the card animations in place of a traditional navigaton bar.
@@ -80,7 +81,9 @@ Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-f
 This project was mostly a front-end project that we wanted to tackle, and we were able to implement most of the stylistic features. However, there are still some improvements that can be made in future iterations:
 
 * Adding split options into the solver.
-* More detailed learn pages with quiz prompts to ask for information
+* Adding automatic win for instant blackjack.
+* Adding a new game button to restart the game.
+* More detailed learn pages with quiz prompts to ask for information.
 * Inclusion of money and betting in the 'play' section.
 * Different play level difficulties.
 * Adding page tranistions and other front-end features to make the website more seamless.
