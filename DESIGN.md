@@ -1,69 +1,54 @@
-# Blackjack
- Blackjack simulator, best move generator, and tutorial page; CS50 Final Project
-
+# Blackjack: Design Document
+This is the official design documentation where we will discuss how we implemented the project and why we made the descisions we did. 
  <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About The Project</a>
+      <a href="#project-timeline">Project Timeline</a>
+        <ul>
+        <li><a href="#design">Design</a></li>
+
+      </ul>
     </li>
     <li>
       <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
     </li>
-    <li> 
-      <a href="File Explaination"> File Explaination </a>
-      <ul> 
-        <li><a href="#index">index.html</a></li>
-        <li><a href="#future-improvements">Future Improvements</a></li>
-        <li><a href="#license">License</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#acknowledgments">Acknowledgments</a></li>
-        <li><a href="#about-cs50">About CS50</a></li>
-      </ul>
-    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#about-cs50">About CS50</a></li>
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-For our CS50 Final Project, we built all-in-one website to teach a player Blackjack. This includes descriptions of basic and advanced strategies, a Blackjack simulator, and a best move calculator.  
+<!-- proj timeline -->
+## Project Timeline
 
-Demonstration: [https://youtube.com](https://example.com)
+### Design
+
+placeholder
+
+### step 2 
+
 
 Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-for-CS50?node-id=0%3A1&t=6kb7p5gngK0dd5A2-1)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-### Installation
-
-1. Clone the repository and open file
-   ```sh
-   git clone https://github.com/Tapiocaba/Blackjack.git
-   ```
-2. Utilize your IDE to open the website. On VSCode, we downloaded the 'open in browser' extention, but you can also do the following:
-   ```sh
-    cd C:Users\(insert your path here)\Blackjack
-    start index.html
-   ```
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 * Home:
   * this is a placeholder
-  ![alt text](https://ichef.bbci.co.uk/news/976/cpsprodpb/13F00/production/_95146618_bills.jpg)
 
   Our home page utilzes CSS animations and transform to have the card animations in place of a traditional navigaton bar.
 
 
 * Learn:
-
-  ![alt text](https://ichef.bbci.co.uk/news/976/cpsprodpb/13F00/production/_95146618_bills.jpg)
 
   Our learn has three sections: the rules, basic strategies, and more advanced strategies, such as card counting. On the side, we implemented a sticky navbar that will direct you to the header of different article sections, and the top navigation bar has CSS animation when switching between the words.
 
