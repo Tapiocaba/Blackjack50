@@ -14,17 +14,11 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li> 
-      <a href="File Explaination"> File Explaination </a>
-      <ul> 
-        <li><a href="#index">index.html</a></li>
-        <li><a href="#future-improvements">Future Improvements</a></li>
-        <li><a href="#license">License</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#acknowledgments">Acknowledgments</a></li>
-        <li><a href="#about-cs50">About CS50</a></li>
-      </ul>
-    </li>
+    <li><a href="#usage">Usage</a></li>
+    <li><a href="#future-improvements">Future Improvements</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#aknowledgements">Aknowledgements</a></li>
   </ol>
 </details>
 
@@ -54,27 +48,11 @@ Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-f
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-* Home:
-  * this is a placeholder
-  
-  ![alt text](https://ichef.bbci.co.uk/news/976/cpsprodpb/13F00/production/_95146618_bills.jpg)
+Find a detailed description of our design and functions at [DESIGN.md](https://github.com/Tapiocaba/Blackjack/blob/main/DESIGN.md).
 
-  Our home page utilzes CSS animations and transform to have the card animations in place of a traditional navigaton bar.
+Our project has multiple navigation bars in order to click through the different pages. At any point, click the "Blackjack50" logo in the top left corner to return to index.html. On **index.html**, clicking on the animated cards will bring you to the different pages. After clicking to the **learn** pages (basics.html, advanced.html, rules.html), it will take you to **rules.html.** The navigation bar on the top right corner will take you to the other pages. On both **solver.html** and **play.html,** clicking Blackjack50 will take you back to the home page.
 
-
-* Learn:
-
-  ![alt text](https://ichef.bbci.co.uk/news/976/cpsprodpb/13F00/production/_95146618_bills.jpg)
-
-  Our learn has three sections: the rules, basic strategies, and more advanced strategies, such as card counting. On the side, we implemented a sticky navbar that will direct you to the header of different article sections, and the top navigation bar has CSS animation when switching between the words.
-
-* Play Blackjack:
-
-* Blackjack Solver
-
-  Right now, our Blackjack solver is extremely simple since our other option was to implement the entire odds board. In future iterations, we hope to include those, but for now, it will simply check whether it's (cont. later)
-
-
+If there are any questions regarding usage of the software, feel free to contact us or submit a bug issue report.
 
 ## Future Improvements
 
@@ -111,7 +89,3 @@ Project Link: [https://github.com/Tapiocaba/Blackjack](https://github.com/Tapioc
 
 References: [https://github.com/Tapiocaba/Blackjack/blob/main/references.md](https://github.com/Tapiocaba/Blackjack/blob/main/references.md)
 
-<!-- ABOUT CS50 -->
-## About CS50
-
-<!-- [description of cs50] -->

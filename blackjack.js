@@ -62,6 +62,7 @@ function startGame()
         document.getElementById("dealer-cards").append(cardImg);
     }
     
+    //deals player's hand
     for (let i = 0; i < 2; i++)
     {
         let cardImg = document.createElement("img");
@@ -79,6 +80,7 @@ function startGame()
 
 function hit()
 {
+    //ensures player hasn't busted yet before they hit
     if (playerHandSum < 21)
     {
         let cardImg = document.createElement("img");
@@ -90,7 +92,7 @@ function hit()
     }
     else
     {
-        document.getElementById("results").innerText = "You bust! \n Refresh the page to play again!";
+        document.getElementById("results").innerText = "Bust! \n Refresh the page to play again!";
         return;
     }
 }
@@ -105,7 +107,11 @@ function stand()
     /*alert(test);
     let message = "";*/
 
-    if (playerHandSum > 21)
+    if (playerHandSum == 21)
+    {
+        message = "Blackjack! \n Refresh the page to play again!"
+    }
+    else if (playerHandSum > 21)
     {
         message = "Bust! \n Refresh the page to play again!";
     }
@@ -140,9 +146,11 @@ function getHandValue(hand)
 
     for (let i = 0; i < hand.length; i++)
     {
+        //separates the value from the suite of the card
         let data = hand[i].split("-");
         let value = data[0];
         
+        //if the card's value is a letter, make its value 11 if it's an A, and a 10 otherwise
         if (isNaN(value))
         {
             if (value == "A")
@@ -161,6 +169,8 @@ function getHandValue(hand)
         }
         handSum += cardValue;
 
+        //reduces the value of the ace if counting it as 11 makes the handSum
+        //greater than or equal to 21
         if(hasAce && handSum >= 21)
         {
             handSum -= 10;
