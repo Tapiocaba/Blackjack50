@@ -347,6 +347,10 @@ main {
     color: white;
 }
 
+#results { 
+    color: white;
+}
+
 /* play section button css */
 .play-button {
     position: relative;
@@ -354,7 +358,7 @@ main {
     appearance: none;
     background-image: radial-gradient(lightgreen, var(--bg-nav));
     border-radius: 6px;
-    color:white;
+    color:black;
     box-shadow: rgba(45, 35, 66, .4) 0 2px 4px,rgba(45, 35, 66, .3) 0 7px 13px -3px,rgba(58, 65, 111, .5) 0 -3px 0 inset;
     box-sizing: border-box;
     cursor: pointer;
@@ -390,13 +394,7 @@ main {
     margin: 1px;
 }
 
-#your-cards img {
-    height: 200px;
-    width: 150px;
-    margin: 1px;
-}
-
-#hidden {
+#player-cards img {
     height: 200px;
     width: 150px;
     margin: 1px;
@@ -408,7 +406,7 @@ main {
     font-size: 20px;
 }
 
-#stay {
+#stand {
     width: 100px;
     height: 50px;
     font-size: 20px;
