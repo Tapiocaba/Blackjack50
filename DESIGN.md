@@ -50,6 +50,8 @@ Wireframe: [Figma](https://www.figma.com/file/65yZhTHtTFDJooHU2cLqrN/Blackjack-f
 
 * Learn:
 
+  ![alt text](https://ichef.bbci.co.uk/news/976/cpsprodpb/13F00/production/_95146618_bills.jpg)
+
   Our learn has three sections: the rules, basic strategies, and more advanced strategies, such as card counting. On the side, we implemented a sticky navbar that will direct you to the header of different article sections, and the top navigation bar has CSS animation when switching between the words.
 
 * Play Blackjack:
