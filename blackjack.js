@@ -107,11 +107,7 @@ function stand()
     /*alert(test);
     let message = "";*/
 
-    if (playerHandSum == 21)
-    {
-        message = "Blackjack! \n Refresh the page to play again!"
-    }
-    else if (playerHandSum > 21)
+    if (playerHandSum > 21)
     {
         message = "Bust! \n Refresh the page to play again!";
     }
